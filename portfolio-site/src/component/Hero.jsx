@@ -51,7 +51,7 @@ const Hero = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-cyan-400"
+              className="text-cyan-400" 
             />
           </div>
 
