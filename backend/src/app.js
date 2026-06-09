@@ -16,4 +16,8 @@ app.use("/api/contact", contactRoutes);
 
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
+app.get("/", (req, res) => {
+    res.send("Server running");
+});
+
 module.exports =  app;
