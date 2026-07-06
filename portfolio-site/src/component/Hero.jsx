@@ -65,7 +65,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6">
            <a
-                  href="http://localhost:3000/api/cv/view"
+                  href="http://localhost:3000/cv/view"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="

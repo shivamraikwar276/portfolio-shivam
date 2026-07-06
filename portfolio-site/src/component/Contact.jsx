@@ -1,6 +1,6 @@
 
 
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { FaPaperPlane, FaUser, FaEnvelope, FaPen } from "react-icons/fa";
 
@@ -32,7 +32,7 @@ const Contact = () => {
       setError("");
 
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/contact/create`,
+        `${import.meta.env.VITE_API_URL}/contact/create`,
         formData
       );
 

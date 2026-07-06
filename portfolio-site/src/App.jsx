@@ -10,10 +10,12 @@ import Projects from "./component/Projects"
 import Skills from "./component/Skills"
 import Experience from './component/Experience'
 import About from './component/About'
+import SmoothScrollerLenis from "./component/SmoothScrollerLenis"
 
 const App = () => {
   return (
     <div>
+    <SmoothScrollerLenis />
     <Navbar />
     <Hero />
     <About />
