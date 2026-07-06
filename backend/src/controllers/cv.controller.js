@@ -3,12 +3,20 @@ const fs = require("fs");
 
 function downloadCVController(req, res) {
 
-    const filePath = path.join(process.cwd(), "uploads", "Shivam_Resume.pdf");
+    const filePath = path.join(
+        process.cwd(),
+        "uploads",
+        "Shivam_Resume.pdf"
+    );
 
-    console.log("Path:", filePath);
-    console.log("Exists:", fs.existsSync(filePath));
+    if (!fs.existsSync(filePath)) {
+        return res.status(404).json({
+            success: false,
+            message: "Resume not found"
+        });
+    }
 
-    res.download(filePath);
+    res.sendFile(filePath);
 }
 
 module.exports = {

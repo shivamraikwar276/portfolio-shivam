@@ -2,9 +2,10 @@
 const express = require("express")
 
 
-const {createContactController} = require("../controllers/contact.controller")
-const {getAllContactsController} = require("../controllers/contact.controller")
-
+const {
+    createContactController,
+    getAllContactsController
+} = require("../controllers/contact.controller");
 
 
 const router = express.Router();

@@ -1,19 +1,53 @@
-const cors = require("cors");
+
+// // const express = require("express");
+
+// // const app = express();
+
+// // // const cvRoutes = require("./routes/cv.routes");
+
+// // app.get("/", (req, res) => {
+// //     res.send("Server running");
+// // });
+
+// // module.exports = app;
+
+
+// const express = require("express");
+
+// const app = express();
+
+// const cvRoutes = require("./routes/cv.routes");
+// const contactRoutes = require("./routes/contact.routes");
+
+// app.use(express.json());
+
+// // 👇 Ye line zaroor add karo
+// app.use("/cv", cvRoutes);
+// app.use("/contact", contactRoutes);
+
+// app.get("/", (req, res) => {
+//     res.send("Server running");
+// });
+
+// module.exports = app;
+
 const express = require("express");
-const contactRoutes = require("./routes/contact.routes");
-const cvRoutes = require("./routes/cv.routes");
-const path = require("path");
+const cors = require("cors");
 
 const app = express();
 
+const cvRoutes = require("./routes/cv.routes");
+const contactRoutes = require("./routes/contact.routes");
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/cv", cvRoutes);
-app.use("/api/contact", contactRoutes);
+// Routes
+app.use("/cv", cvRoutes);
+app.use("/contact", contactRoutes);
 
-app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
-
+// Home Route
 app.get("/", (req, res) => {
     res.send("Server running");
 });
