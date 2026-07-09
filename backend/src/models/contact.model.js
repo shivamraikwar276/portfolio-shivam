@@ -26,7 +26,7 @@ const contactSchema = new mongoose.Schema({
     subject: {
         type: String,
         required: [true, "subject is required for response"],
-        minlen: [4, "Subject should be at least 4 Character"],
+        minlenth: [4, "Subject should be at least 4 Character"],
         trim: true,
     },
 

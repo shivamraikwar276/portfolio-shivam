@@ -71,7 +71,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6">
            <a
-                  href="http://localhost:3000/cv/view"
+                  href="https://portfolio-shivam-suk3.onrender.com/cv/view"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
@@ -115,7 +115,7 @@ const Hero = () => {
         </div>
 
         {/* Right Image */}
-        <div className="w-full lg:w-[45%] order-1 lg:order-2 flex justify-center items-center">
+        {/* <div className="w-full lg:w-[45%] order-1 lg:order-2 flex justify-center items-center">
           <div className="relative group">
             <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-3xl scale-110"></div>
 
@@ -135,9 +135,7 @@ const Hero = () => {
               "
             >
               <img
-                src="https://res-console.cloudinary.com/fhqox9dk/thumbnails/v1/image/upload/v1783526162/dGhpc19pc190aGVfaW1nX29mX2RlcGxveWVkX3BvcnRmb2xpb19iYW5qc2I=/drilldown"
-                // src="https://ik.imagekit.io/60gzpaktg/image_xce1bH-fd.jpg?updatedAt=1776833195675"
-                // src='https://res-console.cloudinary.com/fhqox9dk/thumbnails/v1/image/upload/v1783518950/c2hpdmFtX3BpY19mb3JfcG9ydGZvbGlvX2Y0cG14Ng==/drilldown'
+              src="https://ik.imagekit.io/60gzpaktg/super2.jpeg?updatedAt=1783596248692"
                 alt="Shivam Raikwar"
                 className="
                   w-full h-full rounded-full object-cover
@@ -151,7 +149,91 @@ const Hero = () => {
 
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-56 h-6 bg-cyan-400/20 blur-xl rounded-full"></div>
           </div>
-        </div>
+        </div> */}
+        
+{/* Right Image */}
+<div className="w-full lg:w-[45%] order-1 lg:order-2 flex justify-center items-center">
+  <div className="relative group">
+
+    {/* Main Glow */}
+    <div
+      className="
+        absolute inset-0
+        rounded-full
+        bg-cyan-400/20
+        blur-[90px]
+        scale-110
+        transition-all duration-700
+        group-hover:bg-cyan-400/40
+        group-hover:blur-[120px]
+      "
+    ></div>
+
+    {/* Rotating Ring */}
+    <div
+      className="
+        absolute
+        -inset-4
+        rounded-full
+        animate-spin-slow
+        pointer-events-none
+      "
+    >
+      <div
+        className="
+          w-full
+          h-full
+          rounded-full
+          border-[1.2px]
+          border-dashed
+          border-cyan-300/60
+        "
+      ></div>
+    </div>
+
+    {/* Image Border */}
+    <div
+      className="
+        relative
+        w-[230px] h-[230px]
+        sm:w-[280px] sm:h-[280px]
+        lg:w-[320px] lg:h-[320px]
+        xl:w-[380px] xl:h-[380px]
+
+        rounded-full
+        p-[2px]
+
+        border
+        border-cyan-300/70
+
+        transition-all
+        duration-700
+
+        shadow-[0_0_25px_rgba(34,211,238,0.35)]
+
+        group-hover:shadow-[0_0_70px_rgba(34,211,238,0.9)]
+        group-hover:border-cyan-200
+        group-hover:scale-[1.03]
+      "
+    >
+      <img
+        src="https://ik.imagekit.io/60gzpaktg/super2.jpeg?updatedAt=1783596248692"
+        alt="Shivam Raikwar"
+        className="
+          w-full
+          h-full
+          rounded-full
+          object-cover
+          transition-all
+          duration-700
+          group-hover:scale-[1.02]
+        "
+      />
+    </div>
+
+  </div>
+</div>
+
       </div>
     </section>
   );
