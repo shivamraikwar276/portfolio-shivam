@@ -60,28 +60,41 @@ const Footer = () => {
         <div className="flex justify-center gap-5 mt-3">
 
           <a
-            href="#"
+            href="https://www.instagram.com/sv_93_99?igsh=MXI0dGlobmRqM3QxYg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
             className="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-lg text-gray-300 hover:text-cyan-400 hover:border-cyan-400 hover:-translate-y-1 transition-all duration-300"
           >
             <FaInstagram />
           </a>
 
           <a
-            href="#"
+            
+            href="https://x.com/S_H_I_A_M"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
             className="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-lg text-gray-300 hover:text-cyan-400 hover:border-cyan-400 hover:-translate-y-1 transition-all duration-300"
           >
             <FaXTwitter />
           </a>
 
           <a
-            href="#"
+            href="https://youtube.com/@winterarc_zone?si=ILyVqQrkegjvAbz5"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Youtube"
             className="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-lg text-gray-300 hover:text-cyan-400 hover:border-cyan-400 hover:-translate-y-1 transition-all duration-300"
           >
             <FaYoutube />
           </a>
 
           <a
-            href="#"
+            href="https://www.facebook.com/share/1J3FiY9de3/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
             className="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-lg text-gray-300 hover:text-cyan-400 hover:border-cyan-400 hover:-translate-y-1 transition-all duration-300"
           >
             <FaFacebookF />

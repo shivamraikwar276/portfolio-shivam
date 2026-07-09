@@ -1,9 +1,15 @@
+
 import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
   return (
     <section
       id="home"
+      // className="
+      //   relative w-full min-h-screen text-white
+      //   flex items-center px-5 sm:px-8 lg:px-20
+      //   pt-28 lg:pt-20 pb-24 overflow-hidden
+      // "
       className="
         relative w-full min-h-screen bg-[#0B1120] text-white
         flex items-center px-5 sm:px-8 lg:px-20
@@ -129,7 +135,9 @@ const Hero = () => {
               "
             >
               <img
-                src="https://ik.imagekit.io/60gzpaktg/image_xce1bH-fd.jpg?updatedAt=1776833195675"
+                src="https://res-console.cloudinary.com/fhqox9dk/thumbnails/v1/image/upload/v1783526162/dGhpc19pc190aGVfaW1nX29mX2RlcGxveWVkX3BvcnRmb2xpb19iYW5qc2I=/drilldown"
+                // src="https://ik.imagekit.io/60gzpaktg/image_xce1bH-fd.jpg?updatedAt=1776833195675"
+                // src='https://res-console.cloudinary.com/fhqox9dk/thumbnails/v1/image/upload/v1783518950/c2hpdmFtX3BpY19mb3JfcG9ydGZvbGlvX2Y0cG14Ng==/drilldown'
                 alt="Shivam Raikwar"
                 className="
                   w-full h-full rounded-full object-cover

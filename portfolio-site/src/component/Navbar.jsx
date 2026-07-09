@@ -16,7 +16,35 @@ const Navbar = () => {
 
   return (
     <header 
-    className="fixed top-0 left-0 w-full z-[9999] bg-[#0B1120]/90 backdrop-blur-md border-b border-white/10">
+    className="
+            group
+            fixed
+            top-0
+            left-0
+            w-full
+            z-[9999]
+
+            bg-[#0B1120]/90
+            backdrop-blur-md
+
+            border-b
+            border-white/10
+
+            transition-all
+            duration-500
+
+            shadow-[0_8px_35px_rgba(0,0,0,0.45)]
+
+            hover:border-cyan-500/30
+            hover:shadow-[0_18px_70px_rgba(34,211,238,0.22)]
+          "
+        >
+
+        {/* Bottom Gradient Line */}
+      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent"></div>
+
+      {/* Bottom Glow */}
+      <div className="pointer-events-none absolute -bottom-3 left-1/2 -translate-x-1/2 w-[85%] h-8 rounded-full bg-cyan-400/20 blur-3xl opacity-0 transition-all duration-500 group-hover:opacity-100"></div>
       <nav className="h-20 w-full px-5 sm:px-8 lg:px-20 flex items-center justify-between">
         
         {/* Logo */}
@@ -44,7 +72,7 @@ const Navbar = () => {
         {/* Right Icons + Menu Button */}
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/"
+            href="https://github.com/shivamraikwar276"
             target="_blank"
             rel="noreferrer"
             className="text-2xl text-gray-300 hover:text-cyan-400 hover:scale-125 transition-all duration-300"
@@ -53,7 +81,7 @@ const Navbar = () => {
           </a>
 
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/shivam-raikwar-6880a1333/"
             target="_blank"
             rel="noreferrer"
             className="text-2xl text-gray-300 hover:text-cyan-400 hover:scale-125 transition-all duration-300"
