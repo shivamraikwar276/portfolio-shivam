@@ -26,7 +26,7 @@ const contactSchema = new mongoose.Schema({
     subject: {
         type: String,
         required: [true, "subject is required for response"],
-        minlenth: [4, "Subject should be at least 4 Character"],
+        minlength: [4, "Subject should be at least 4 Character"],
         trim: true,
     },
 
@@ -40,7 +40,7 @@ const contactSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        expires: 60 * 60 * 24 * 2
+        // expires: 60 * 60 * 24 * 2
     }
 }, {
     timestamps: true
