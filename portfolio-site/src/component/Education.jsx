@@ -35,7 +35,8 @@ const Education = () => {
   return (
     <section
       id="education"
-      className=" scroll-mt-20 relative z-0 w-full bg-gradient-to-br from-[#12001f] via-[#050816] to-[#000b26] text-white px-5 sm:px-8 lg:px-20 py-24 overflow-hidden"
+      className=" scroll-mt-20 relative z-0 w-full bg-[#0B1120] text-white px-5 sm:px-8 lg:px-20 py-24 overflow-hidden"
+      // className=" scroll-mt-20 relative z-0 w-full bg-gradient-to-br from-[#12001f] via-[#050816] to-[#000b26] text-white px-5 sm:px-8 lg:px-20 py-24 overflow-hidden"
     >
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-700/20 blur-3xl rounded-full"></div>
       <div className="absolute top-20 right-0 w-96 h-96 bg-blue-700/10 blur-3xl rounded-full"></div>

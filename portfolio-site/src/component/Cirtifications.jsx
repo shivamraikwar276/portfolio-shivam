@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaCheck } from "react-icons/fa";
 import {
   Award,
   Calendar,
@@ -136,7 +137,7 @@ const Cirtifications = () => {
 
   return (
     <section 
-     className="certifications-container relative min-h-screen overflow-hidden bg-[#0A0619] px-4 py-16 text-white sm:px-6 lg:px-20">
+     className="certifications-container relative min-h-screen overflow-hidden bg-[#0B1120] px-4 py-16 text-white sm:px-6 lg:px-20">
       {/* Dynamic Glow Background Lines */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-28 -top-28 h-[450px] w-[450px] rounded-full blur-[140px]" />
@@ -155,14 +156,17 @@ const Cirtifications = () => {
             </div>
           </div>
 
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-200 backdrop-blur-xl shadow-[0_0_15px_rgba(168,85,247,0.1)]">
-            <Sparkles className="h-4 w-4 text-amber-400 animate-pulse" />
-            Verified Portfolio Credentials
-          </div>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-gradient-to-r from-cyan-500/10 via-sky-500/10 to-blue-600/10 px-4 py-3 text-lg font-semibold text-cyan-100 backdrop-blur-xl shadow-[0_0_25px_rgba(34,211,238,0.2)] hover:shadow-[0_0_35px_rgba(34,211,238,0.3)] transition-all duration-300 hover:scale-103 active:scale-97 duration-300 cursor-pointer">
+              <Sparkles className="h-4 w-4 text-cyan-300 animate-pulse" />
+              Verified Portfolio Credentials
+            </div>
 
-          <h2 className="bg-gradient-to-r from-white via-purple-200 to-indigo-300 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent md:text-5xl">
-            Certifications
-          </h2>
+           <h2 className="text-center text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+              <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400 bg-clip-text text-transparent">
+                Certifications
+              </span>
+              <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 shadow-[0_0_20px_rgba(34,211,238,0.7)]"></div>
+            </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-400 md:text-base">
             My verified certificates and professional achievements with secure admin upload access.
@@ -170,40 +174,47 @@ const Cirtifications = () => {
         </div>
 
         {/* Tab Switcher */}
-        <div className="mx-auto mb-12 flex max-w-md rounded-2xl border border-purple-500/15 bg-[#130E26]/80 p-1.5 shadow-[0_4px_30px_rgba(0,0,0,0.4)] backdrop-blur-xl">
-          <button
-            onClick={() => setActiveTab("view")}
-            className={`w-1/2 rounded-xl px-4 py-3 text-sm font-bold transition-all duration-300 ${
-              activeTab === "view"
-                ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-[0_0_25px_rgba(168,85,247,0.4)] scale-[1.02]"
-                : "text-slate-400 hover:text-purple-200"
-            }`}
-          >
-            View Certificates
-          </button>
+         <div className="mx-auto mb-12 gap-5 px-3 flex max-w-md rounded-2xl border border-cyan-400/20 bg-[#08131F]/85 p-1.5 shadow-[0_8px_35px_rgba(34,211,238,0.15)] backdrop-blur-xl">
+           <button
+              onClick={() => setActiveTab("view")}
+              className={`w-1/2 rounded-2xl px-5 py-3 text-sm font-semibold transition-all duration-300 ${
+                activeTab === "view"
+                  ? "border border-cyan-400/20 bg-[#12344A] text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.18)]"
+                  : "text-slate-400 hover:bg-white/5 hover:text-cyan-300"
+              }`}
+            >
+              View Certificates
+            </button>
 
-          <button
-            onClick={() => setActiveTab("add")}
-            className={`w-1/2 rounded-xl px-4 py-3 text-sm font-bold transition-all duration-300 ${
-              activeTab === "add"
-                ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-[0_0_25px_rgba(168,85,247,0.4)] scale-[1.02]"
-                : "text-slate-400 hover:text-purple-200"
-            }`}
-          >
-            Add Certificate
-          </button>
+            <button
+              onClick={() => setActiveTab("add")}
+              className={`w-1/2 rounded-2xl px-5 py-3 text-sm font-semibold transition-all duration-300 ${
+                activeTab === "add"
+                  ? "border border-cyan-400/20 bg-[#12344A] text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.18)]"
+                  : "text-slate-400 hover:bg-white/5 hover:text-cyan-300"
+              }`}
+            >
+              Add Certificate
+            </button>
+
         </div>
 
         {/* Add Certificate Tab */}
         {activeTab === "add" && (
-          <div className="mx-auto max-w-3xl rounded-3xl border border-purple-500/20 bg-[#120C28]/90 p-6 shadow-[0_0_50px_rgba(168,85,247,0.1)] backdrop-blur-2xl md:p-8">
+          <div 
+          className="mx-auto max-w-3xl rounded-3xl p-6 md:p-8"
+          >
             {!isUnlocked ? (
               <form onSubmit={handlePasswordSubmit} className="space-y-5">
                 <div className="flex items-center gap-3">
-                  <div className="rounded-2xl bg-purple-500/10 p-3 text-purple-400 border border-purple-500/20">
+                  <div 
+                  className="rounded-2xl bg-cyan-500/10 p-3 text-cyan-400 border border-cyan-500/20">
+                  {/* className="rounded-2xl bg-purple-500/10 p-3 text-purple-400 border border-purple-500/20"> */}
                     <Lock className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-100">Admin Access Required</h3>
+                  <h3 
+                  className="text-2xl font-bold text-slate-100 "
+                  >Admin Access Required</h3>
                 </div>
 
                 <input
@@ -211,7 +222,8 @@ const Cirtifications = () => {
                   placeholder="Enter frontend password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="input-style"
+                  className="input-style hover:scale-102 duration-300"
+                  // className="input-style"
                 />
 
                 {passwordError && (
@@ -220,61 +232,97 @@ const Cirtifications = () => {
 
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-3 font-bold text-white shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(168,85,247,0.4)]"
+                  className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 via-sky-600 to-indigo-600 px-6 py-3.5 font-semibold text-white shadow-sm shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:from-cyan-400 hover:via-blue-500 hover:to-violet-600 hover:shadow-xl hover:shadow-cyan-400/40 active:scale-[0.98] focus:outline-none focus:ring-1 focus:ring-cyan-400/50"
+                  // className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-3 font-bold text-white shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(168,85,247,0.4)]"
                 >
                   <ShieldCheck className="h-5 w-5" />
                   Unlock Panel
                 </button>
               </form>
             ) : (
-              <form onSubmit={handleSaveCertificate} className="space-y-5">
-                <h3 className="text-2xl font-bold text-purple-100">Add New Certificate</h3>
+            
 
-                <input
-                  name="title"
-                  value={formData.title}
-                  onChange={handleChange}
-                  placeholder="Certificate Title"
-                  className="input-style"
-                />
+              <form
+                onSubmit={handleSaveCertificate}
+                className="mx-auto rounded-[30px] border border-cyan-400/20 bg-gradient-to-br from-slate-900/95 via-[#101C34]/90 to-[#0B2133]/95 p-8 shadow-[0_0_60px_rgba(34,211,238,0.12)] backdrop-blur-2xl"
+              >
+                {/* Header */}
+                <div>
+                  <h3 className="bg-gradient-to-r from-cyan-300 via-white mb-3 to-violet-400 bg-clip-text text-3xl font-black text-transparent">
+                    Add New Certificate
+                  </h3>
 
-                <input
-                  name="organization"
-                  value={formData.organization}
-                  onChange={handleChange}
-                  placeholder="Issuing Organization"
-                  className="input-style"
-                />
+                  <p className="mt-2 text-sm text-slate-400 mb-5">
+                    Upload and showcase your verified professional achievements.
+                  </p>
+                </div>
 
-                <input
-                  type="date"
-                  name="issueDate"
-                  value={formData.issueDate}
-                  onChange={handleChange}
-                  className="input-style"
-                />
+                {/* Form Grid */}
+                <div className="grid gap-5 md:grid-cols-2">
+                  <input
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
+                    placeholder="Certificate Title"
+                    className="input-style"
+                  />
 
-                <input
-                  name="credentialId"
-                  value={formData.credentialId}
-                  onChange={handleChange}
-                  placeholder="Credential ID (Optional)"
-                  className="input-style"
-                />
+                  <input
+                    name="organization"
+                    value={formData.organization}
+                    onChange={handleChange}
+                    placeholder="Issuing Organization"
+                    className="input-style"
+                  />
 
-                <input
-                  name="verificationLink"
-                  value={formData.verificationLink}
-                  onChange={handleChange}
-                  placeholder="Verification Link"
-                  className="input-style"
-                />
+                  <input
+                    type="date"
+                    name="issueDate"
+                    value={formData.issueDate}
+                    onChange={handleChange}
+                    className="input-style"
+                  />
 
-                <label className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-purple-500/30 bg-purple-500/5 p-8 text-center transition-all hover:border-purple-500/60 hover:bg-purple-500/10">
-                  <UploadCloud className="mb-3 h-10 w-10 text-purple-400" />
-                  <span className="font-medium text-slate-300">
-                    {formData.certificateImage ? formData.certificateImage.name : "Upload Certificate Image"}
+                  <input
+                    name="credentialId"
+                    value={formData.credentialId}
+                    onChange={handleChange}
+                    placeholder="Credential ID (Optional)"
+                    className="input-style"
+                  />
+
+                  <div className="md:col-span-2 mb-2">
+                    <input
+                      name="verificationLink"
+                      value={formData.verificationLink}
+                      onChange={handleChange}
+                      placeholder="Verification Link"
+                      className="input-style"
+                    />
+                  </div>
+                </div>
+
+                {/* Upload Box */}
+                <label className="group flex cursor-pointer flex-col items-center justify-center rounded-3xl border-2 border-dashed border-cyan-400/30 bg-cyan-500/5 px-6 py-10 text-center transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-500/10 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
+
+                  <div className="mb-5 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 p-5 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    <UploadCloud className="h-10 w-10 text-cyan-300" />
+                  </div>
+
+                  <h4 className="text-lg font-bold text-white">
+                    Upload Certificate
+                  </h4>
+
+                  <p className="mt-2 text-sm text-slate-400">
+                    Drag & Drop or Click to Browse
+                  </p>
+
+                  <span className="mt-4 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
+                    {formData.certificateImage
+                      ? formData.certificateImage.name
+                      : "PNG • JPG • JPEG"}
                   </span>
+
                   <input
                     type="file"
                     name="certificateImage"
@@ -284,127 +332,230 @@ const Cirtifications = () => {
                   />
                 </label>
 
+                {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-4 font-extrabold text-white shadow-[0_0_30px_rgba(168,85,247,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(168,85,247,0.45)] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 px-6 py-4 text-lg font-bold text-white shadow-[0_0_30px_rgba(34,211,238,0.25)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(34,211,238,0.45)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
+                  <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full"></span>
+
                   {loading ? (
                     <>
                       <Loader2 className="h-5 w-5 animate-spin" />
-                      Saving...
+                      Uploading...
                     </>
                   ) : (
                     <>
-                      <UploadCloud className="h-5 w-5" />
+                      <UploadCloud className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-1" />
                       Save Certificate
                     </>
                   )}
                 </button>
               </form>
+
             )}
           </div>
         )}
 
-        {activeTab === "view" && (
-          <>
-            {fetchError && <p className="mb-6 text-center text-red-400">{fetchError}</p>}
 
-            {certificates.length === 0 ? (
-              <div className="rounded-3xl border border-dashed border-purple-500/20 bg-[#120C28]/60 p-12 text-center shadow-lg backdrop-blur-xl">
-                <Award className="mx-auto mb-4 h-12 w-12 text-purple-400/50" />
-                <h3 className="text-2xl font-bold text-slate-300">No Certificates Found</h3>
-                <p className="mt-2 text-sm text-slate-400">
-                  Add certificate tab se certificate upload karo.
-                </p>
-              </div>
-            ) : (
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {certificates.map((cert) => (
-                  <div
-                    key={cert._id}
-                    className="group rounded-3xl border border-purple-500/10 bg-[#110B26]/90 p-5 shadow-[0_4px_25px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-purple-500/40 hover:bg-[#150E30]/95 hover:shadow-[0_0_35px_rgba(168,85,247,0.25)]"
-                  >
-                    <div className="mb-4 overflow-hidden rounded-2xl border border-purple-500/10 bg-[#070412]">
-                      <img
-                        src={cert.imageUrl}
-                        alt={cert.title}
-                        className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
-                    </div>
+      {activeTab === "view" && (
+  <>
+    {fetchError && (
+      <p className="mb-6 text-center text-red-400">{fetchError}</p>
+    )}
 
-                    <h3 className="text-xl font-bold text-slate-100 group-hover:text-purple-200 transition-colors">
-                      {cert.title}
-                    </h3>
+    {certificates.length === 0 ? (
+      <div className="rounded-[30px] border border-dashed border-cyan-400/25 bg-gradient-to-br from-slate-900/95 via-[#101C34]/90 to-[#0B2133]/95 p-16 text-center shadow-[0_0_40px_rgba(34,211,238,0.08)] backdrop-blur-2xl">
 
-                    <p className="mt-2 flex items-center gap-2 text-sm text-slate-400">
-                      <Building2 className="h-4 w-4 text-purple-400" />
-                      {cert.organization}
-                    </p>
+        <Award className="mx-auto mb-6 h-16 w-16 animate-pulse text-cyan-400" />
 
-                    <p className="mt-2 flex items-center gap-2 text-sm text-slate-400">
-                      <Calendar className="h-4 w-4 text-purple-400" />
-                      {cert.issueDate}
-                    </p>
+        <h3 className="text-3xl font-black text-white">
+          No Certificates Yet
+        </h3>
 
-                    <div className="mt-5 flex gap-3">
-                      <button
-                        onClick={() => openCertificateInNewTab(cert.imageUrl)}
-                        className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-3 text-sm font-bold text-white shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]"
-                      >
-                        <Eye className="h-4 w-4" />
-                        View Certificate
-                      </button>
+        <p className="mt-3 text-slate-400">
+          Upload your first certificate and showcase your achievements.
+        </p>
 
-                      {cert.verificationLink && (
-                        <a
-                          href={cert.verificationLink}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex items-center justify-center rounded-xl border border-purple-500/30 bg-purple-500/10 px-4 py-3 text-purple-300 transition-all hover:bg-purple-500/20"
-                        >
-                          <LinkIcon className="h-4 w-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </>
-        )}
       </div>
+    ) : (
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {certificates.map((cert) => (
+          <div
+            key={cert._id}
+            className="group relative overflow-hidden rounded-[28px] border border-cyan-400/15 bg-gradient-to-br from-slate-900/95 via-[#101C34]/90 to-[#0B2133]/95 p-5 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_0_45px_rgba(34,211,238,0.18)]"
+          >
+            {/* Background Glow */}
+            <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+              <div className="absolute -top-24 left-1/2 h-60 w-60 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl"></div>
+              <div className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-violet-500/10 blur-3xl"></div>
+            </div>
 
-      {/* Font & Custom styles */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+            {/* Certificate Image */}
+            <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src={cert.imageUrl}
+                alt={cert.title}
+                className="h-52 w-full object-cover transition-all duration-700 group-hover:scale-110"
+              />
 
-        .certifications-container {
-          font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
 
-        .input-style {
-          width: 100%;
-          border-radius: 0.9rem;
-          border: 1px solid rgba(168, 85, 247, 0.15);
-          background: rgba(17, 11, 38, 0.9);
-          padding: 0.9rem 1rem;
-          color: white;
-          outline: none;
-          transition: 0.25s ease;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
-        }
+              <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full border border-cyan-300/30 bg-cyan-500/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(34,211,238,0.4)] backdrop-blur-xl">
+                <FaCheck className="h-3 w-3 rounded-full bg-white p-[2px] text-cyan-600" />
+                Verified
+              </div>
+            </div>
 
-        .input-style::placeholder {
-          color: rgba(203, 213, 225, 0.4);
-        }
+            {/* Certificate Info */}
+            <h3 className="text-xl font-extrabold tracking-tight text-white transition duration-300 group-hover:text-cyan-300">
+              {cert.title}
+            </h3>
 
-        .input-style:focus {
-          border-color: #a855f7;
-          box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2),
-            0 0 30px rgba(168, 85, 247, 0.15);
-        }
-      `}</style>
+            <p className="mt-3 flex items-center gap-2 text-sm text-slate-300">
+              <Building2 className="h-4 w-4 text-cyan-400" />
+              {cert.organization}
+            </p>
+
+            <p className="mt-2 flex items-center gap-2 text-sm text-slate-400">
+              <Calendar className="h-4 w-4 text-violet-400" />
+              {cert.issueDate}
+            </p>
+
+            {/* Buttons */}
+            <div className="mt-6 flex gap-3">
+
+              <button
+                onClick={() => openCertificateInNewTab(cert.imageUrl)}
+                className="group/button relative flex flex-1 items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 px-4 py-3 text-sm font-bold text-white shadow-[0_0_25px_rgba(34,211,238,0.25)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_45px_rgba(34,211,238,0.45)]"
+              >
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover/button:translate-x-full"></span>
+
+                <Eye className="relative h-4 w-4" />
+
+                <span className="relative">
+                  View Certificate
+                </span>
+              </button>
+
+              {cert.verificationLink && (
+                <a
+                  href={cert.verificationLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-3 text-cyan-300 transition-all duration-300 hover:scale-105 hover:bg-cyan-500/20 hover:shadow-[0_0_20px_rgba(34,211,238,0.35)]"
+                >
+                  <LinkIcon className="h-5 w-5" />
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </>
+)} </div>
+
+
+          <style>{`
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+      .certifications-container {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: #f8fafc;
+      }
+
+      .input-style {
+        width: 100%;
+        padding: 0.95rem 1.15rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(99, 102, 241, 0.18);
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.88),
+          rgba(30, 41, 59, 0.72)
+        );
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 500;
+        outline: none;
+
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          transform 0.25s ease,
+          background 0.3s ease;
+
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,0.05),
+          0 10px 30px rgba(0,0,0,0.25);
+      }
+
+      .input-style::placeholder {
+        color: rgba(203, 213, 225, 0.55);
+        font-weight: 500;
+      }
+
+      .input-style:hover {
+        border-color: rgba(56, 189, 248, 0.45);
+        transform: translateY(-2px);
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,0.06),
+          0 14px 36px rgba(34,211,238,0.12);
+      }
+
+      .input-style:focus {
+        border-color: #38bdf8;
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.95),
+          rgba(30, 41, 59, 0.82)
+        );
+
+        box-shadow:
+          0 0 0 3px rgba(56,189,248,0.18),
+          0 0 30px rgba(56,189,248,0.18),
+          0 0 60px rgba(168,85,247,0.12);
+
+        transform: translateY(-2px);
+      }
+
+      .input-style:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      textarea.input-style {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .input-style::-webkit-file-upload-button {
+        margin-right: 12px;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(
+          90deg,
+          #06b6d4,
+          #3b82f6,
+          #8b5cf6
+        );
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      .input-style::-webkit-file-upload-button:hover {
+        filter: brightness(1.08);
+      }
+    `}</style>
+
     </section>
   );
 };

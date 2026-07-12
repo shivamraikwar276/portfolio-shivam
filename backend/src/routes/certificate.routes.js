@@ -12,7 +12,7 @@ const checkPassword = (req, res, next) => {
   if (password !== process.env.ADMIN_UPLOAD_PASSWORD) {
     return res.status(401).json({
       success: false,
-      message: "Invalid admin password",
+      message: "Invalid admin password. ",
     });
   }
 
@@ -69,7 +69,7 @@ router.post("/upload", checkPassword, upload.single("certificateImage"), async (
 
     res.status(201).json({
       success: true,
-      message: "Certificate uploaded successfully",
+      message: "Certificate uploaded successfully.",
       certificate,
     });
   } catch (error) {
