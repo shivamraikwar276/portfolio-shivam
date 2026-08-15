@@ -13,7 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const API_BASE_URL = "http://localhost:3000/api/certificates";
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/certificates`;
 
 const FRONTEND_PASSWORD = "shivam123";
 const BACKEND_UPLOAD_PASSWORD = "shivam123";

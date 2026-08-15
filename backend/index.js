@@ -1,49 +1,26 @@
-// // require("dotenv").config();
-
-// // const app = require("./src/app");
-// // const connectDB = require("./src/config/db");
-
-// // const PORT = process.env.PORT || 3000;
-
-// // connectDB();
-
-// // app.listen(PORT, () => {
-// //     console.log(`Server running successfully on port ${PORT}`);
-// // });
-
-
-
-// require("dotenv").config();
-
-// const app = require("./src/app");
-// const connectDB = require("./src/config/db");
-
-// const PORT = process.env.PORT || 3000;
-
-// // Connect MongoDB
-// connectDB();
-
-// // Start Server
-// app.listen(PORT, () => {
-//     console.log(`✅ Server running successfully on port ${PORT}`);
-// });
-
-
-
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
 require("dotenv").config();
 
-const dns = require("dns");
-dns.setDefaultResultOrder("ipv4first");
+const app = express();
 
-const app = require("./src/app");
-const connectDB = require("./src/config/db");
+// Middlewares
+app.use(cors({ origin: "*", credentials: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-const PORT = process.env.PORT || 3000;
+// Routes
+app.get("/", (req, res) => res.json({ status: "OK", message: "Server Running!" }));
+app.use("/contact", require("./src/routes/contact.routes.js"));
 
-// Connect MongoDB
-connectDB();
+// DB Connection & Server Start
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI;
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`✅ Server running successfully on port ${PORT}`);
-});
+mongoose.connect(MONGO_URI)
+  .then(() => {
+    console.log("MongoDB Connected");
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  })
+  .catch((err) => console.error("DB Connection Error:", err.message));
